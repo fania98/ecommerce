@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-style: 微软雅黑;
+        }
+        .mynav{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            height:100%;
+        }
+
+        .navele{
+            display:block;
+            float:left;
+            color:#4e555b;
+            background-color:#f6f6f6;
+            padding-left:30px;
+            padding-right:60px;
+            margin-top: 1px;
+            height:45px;
+            width:220px;
+            text-align:center;
+            font-size: larger;
+            font-family: 微软雅黑;
+            width:100%;
+            min-width:160px;
+        }
+        .header{
+            display:block;
+            float:left;
+            font-family: 微软雅黑;
+            color:#981f22;
+            background-color:#f6f6f6;
+            padding-left:30px;
+            padding-right:60px;
+            height:50px;
+            width:220px;
+            text-align:center;
+            font-size: 20px;
+            font-weight:bold;
+            width:100%;
+            min-width:160px;
+        }
+        .navele:hover{
+            background-color:#c9c9c9;
+            color: #32383e;
+        }
+        .header:hover{
+            background-color:#c9c9c9;
+            color: #32383e;
+        }
+        .navele p{
+            position:relative;
+            top:20%;
+        }
+        .header p{
+            position:relative;
+            top:20%;
+        }
+        .recommand{
+            background-color:#f6f6f6;
+            width:100%;
+            height:360px;
+        }
+        .every_re{
+            color:#981f22;
+            font-family: 微软雅黑;
+            font-weight: bold;
+            height: auto;
+            font-size: 15px;
+            margin-top:3%
+        }
+        .title_re{
+            position:relative;
+            margin-top:5%;
+            color:#877f6c;
+            font-family: 黑体;
+            /*font-weight: bold;*/
+            height:auto;
+            font-size: 20px;
+        }
+        .introduction{
+            color:#32383e;
+            font-size:13px;
+            font-family: 微软雅黑;
+        }
+        .btn{
+            /* margin-top:-30%;*/
+            font-size:20%;
+            text-align: center;
+        }
+        .btn2{
+            position:relative;
+            top:0;
+        }
+        .price{
+            font-size:18px;
+            color:#981f22;
+            font-family: 微软雅黑;
+            font-weight: bold;
+            /* margin-top:-30%;*/
+        }
+        .divder {
+            font-size:20px;
+            font-family: 幼圆;
+            font-weight:bold;
+        }
+        .mainrow {
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .new_title {
+            font-family: 黑体;
+            margin-top:7px;
+            font-weight: bold;
+            font-size:17px;
+        }
+        .date {
+            font-family:等线;
+            font-size:14px;
+            color: #aaaaaa;
+        }
+        .paihang{
+            display:block;
+            float:left;
+            color:#4e555b;
+            background-color: #f6f6f6;
+            padding-left:30px;
+            padding-right:60px;
+            margin-top: 1px;
+            height:45px;
+            width:220px;
+            text-align: -moz-center;
+            font-size: larger;
+            font-family: 微软雅黑;
+            width:100%;
+            min-width:160px;
+        }
+        .paihang:hover{
+            background-color:#c9c9c9;
+            color: #32383e;
+        }
+        .paihangtab{
+            margin-left:10px;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <title>main page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="css/navbar.css" type="text/css" media="screen">-->
+    <script>
+        $(document).ready(function(){
+           $('#btn1').click(function()
+           {
+               alert("sen");
+           });
+           $('#loginsubmit').click(function(){
+              // refresh();
+               //alert("login");
+               $('#loginhref').html("<a href='#'>个人中心</a>");
+           });
+            $('#reg').click(function(){
+                // refresh();
+                //alert("login");
+                $('#loginhref').html("<a href='#'>个人中心</a>");
+            });
+        });
+        function refresh() {
+            window.location.reload();
+        }
+    </script>
+    <script>
+        function sendverti() {
+            alert("send");
+        }
+        // $(document).ready(function(){
+        //   $("#loginsubmit").click(function(){
+        //     $("#loginhref").html("个人中心");
+        // });
+        //}
+        /*function openmodel()
+        {
+            $('#myModal').modal('show');
+            $('#myModal').on('hide.bs.modal', function () {
+                alert("您选择的是：" + radio + "。抱歉！添加功能暂时不提供。");
+            });
+        }*/
+        /*function submit()
+        {
+            alert("submit");
+            // alert("message");
+            //location.reload();
+            //document.getElementById("loginhref").innerHTML("<a href='#'>个人中心</a>");
+
+        }*/
+    </script>
+
+</head>
+<body onload="changeheight()">
+<div>
+    <!--模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#login" data-toggle="tab">
+                                登录
+                            </a>
+                        </li>
+                        <li><a href="#register" data-toggle="tab">注册</a></li>
+                    </ul>
+                </div>
+                <div id="tabcontent" class="tab-content">
+                    <div class="tab-pane fade in active" id="login">
+                        <div class="modal-body">
+                            <form role="form" class="form-horizontal"  action="#" style="width:100%">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-2 control-label"
+                                            <label  for="loginname">用户名</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="loginname" placeholder="请输入电话或邮箱">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-2 control-label"
+                                        <label for="password">密码</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="password" placehoder="请输入密码" class="form-control" id="password">
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary" id="loginsubmit" data-dismiss="modal">登录</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="register">
+                        <div class="modal-body">
+                            <form role="form" class="form-horizontal"  action="#" style="width:100%">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-offset-2 col-md-2 control-label">
+                                        <label  for="username">用户名</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="username" placeholder="请输入电话或邮箱">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-2 control-label">
+                                        <label for="setpassword">设置密码</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="password" placeholder="请输入密码" class="form-control" id="setpassword">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-2 control-label">
+                                        <label for="verti">验证</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="verti" placehoder="输入验证码">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-block" id="sendverti" onclick="sendverti()">发送验证码</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" id="reg"  data-dismiss="modal">注册</button>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+</div>
+</div>
+</div>
+
+    <!--主页面-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-6">
+                <img class="img-responsive" src="image/logo.png">
+            </div>
+            <div class="col-md-2" style="text-align: right">
+                <div class="row">
+                    <ol class="breadcrumb" style="width:100%;background-color:white">
+                        <li id="loginhref"><a href="#" data-toggle="modal" data-target="#myModal" onclick="openmodel()">登录</a></li>
+                       <!-- <li><a href="#">我的订单</a></li>
+                        <li><a href="#">收藏</a></li>-->
+                        <li><a href="#">购物车</a></li>
+                    </ol>
+                </div>
+                <!--搜索栏-->
+                <div class="row">
+                        <!--<form role="form" class="form-horizontal" id="search" action="#">-->
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="searchinput" placeholder="输入搜索关键词">
+                            </div>
+                            <div class="col-md-2">
+                                <button style="margin-left:-10px" class="btn">搜索</button>
+                            </div>
+
+                    </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <!--搜索栏-->
+       <!--<div class="row" id="searchrow">
+            <div class="col-md-2">
+                <form role="form" class="form-horizontal" id="search" action="#">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="searchinput" placeholder="输入搜索关键词">
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-default">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>-->
+       <!-- 水平线
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h5 class="divider"></h5>
+            </div>
+        </div>-->
+        <!--导航栏-->
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                   <div class="navbar-header">
+                        <a class="navbar-brand" href="#">首页</a>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">杂志 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">种类1</a></li>
+                                    <li><a href="#">种类2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">优惠专区<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">种类1</a></li>
+                                    <li><a href="#">种类2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">社区<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">种类1</a></li>
+                                    <li><a href="#">种类2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="#">个人管理</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">种类1</a></li>
+                                <li><a href="#">种类2</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        </div>
+        <div class="hidden-xs"style="text-align:center;width:100%">
+            <img src="image/slider1.png" class="img-responsive">
+        </div>
+    <!--杂志导航-->
+
+            <div class="row mainrow">
+                <div class="col-md-offset-2 col-md-2 "id="mainnav">
+                    <ul class="mynav" >
+                        <li class="header"><p>杂志分类</p></li>
+                        <a href="#"><li class="navele"><p>时尚生活</p>
+                            <div class="fashion"></div>
+                        </li></a>
+                        <a href="#"><li class="navele"><p href="#">娱乐休闲</p></li></a>
+                        <li onclick="sendverti()" class="navele"><p>运动健康</p></li>
+                        <li class="navele"><p>教育科技</p></li>
+                        <li class="navele"><p>商业财经</p></li>
+                        <li class="navele"><p>新闻人物</p></li>
+                        <li class="navele"><p>文化艺术</p></li>
+                    </ul>
+
+
+                    <!--<ul id="nav">
+                        <li><a href="#">时尚生活</a>
+                                <ul>
+                                    <li><a href="#">111</a></li>
+                                    <li><a href="#">222</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">娱乐休闲 </a></li>
+                            <li><a href="#">运动健康</a></li>
+                            <li><a href="#">教育科技</a></li>
+                            <li><a href="#">商业财经</a></li>
+                            <li><a href="#">新闻人物</a></li>
+                            <li><a href="#">文化艺术</a></li>
+                    </ul>-->
+                </div>
+
+
+                <!--每日推荐-->
+                <div class="col-md-3 recommand hidden-xs hidden-sm" id="recommand">
+                    <div class="row">
+                        <div class="col-md-6 every_re">
+                            <p>每日推荐</p>
+                        </div>
+                        <div class="col-md-6 title_re">
+                            <p>  文化的穿梭</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="image/recommand.PNG" class="img-responsive">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="introduction">本期主题崇礼区隶属于河北省张家口市。距今200万年前古人类就在此繁衍生息，5000年前，黄帝、炎帝、蚩尤“邑于逐鹿之阿”，开启了中华文明之先河。如今，崇礼是华北地区最大的天然滑雪场，被誉为东方达沃斯。</p
+                            <br>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="price">免费</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <button id="btn1" class="btn btn-block btn-danger" onclick="sendverti()">内容预览</button>
+                                    <br>
+                                    <button class="btn btn-block btn-danger">立即购买</button>
+                                </div>
+                            <!--<div class="row">
+                                <div class="col-md-6">
+                                    <button class="btn btn-block btn-danger btn1">内容预览</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-block btn-danger btn2">立即购买</button>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    </div>
+                    <!--<div class="row btn1">
+                        <div class="col-md-offset-5 col-md-3">
+                            <p class="price">免费</p>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-block btn-danger btn1">内容预览</button>
+                        </div>
+                    </div>
+                    <div class="row btn2">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button class="btn btn-block btn-danger btn2">立即购买</button>
+                        </div>
+                    </div>-->
+                </div>
+                <!--排行榜-->
+                <div class="col-md-3 paihangtab">
+                    <ul class="nav nav-tabs every_re">
+                            <li class="active">
+                                <a href="#weekhit" data-toggle="tab">
+                                    周点击量排行
+                                </a>
+                            </li>
+                            <li ><a href="#totalorder" data-toggle="tab">阅读量排行</a></li>
+                        </ul>
+                    <div id="tabcontent2" class="tab-content">
+                        <div class="tab-pane fade in active" id="weekhit">
+                               <ul class="mynav">
+                                   <li class="paihang"><span class="every_re"> 1 </span><span class="new_title">恋侬 </span><span class="date">2017年第2期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 2 </span><span class="new_title">桂林 </span><span class="date">2017年第3期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 3 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第1期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 4 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 5 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 6 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                                   <li class="paihang"> <span class="every_re"> 7 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                               </ul>
+                        </div>
+                        <div class="tab-pane fade" id="totalorder">
+                            <ul class="mynav">
+                                <li class="paihang"><span class="every_re"> 1 </span><span class="new_title">视界 </span><span class="date">2017年第2期</span></li>
+                                <li class="paihang"> <span class="every_re"> 2 </span><span class="new_title">恋侬 </span><span class="date">2017年第3期</span></li>
+                                <li class="paihang"> <span class="every_re"> 3 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第1期</span></li>
+                                <li class="paihang"> <span class="every_re"> 4 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第5期</span></li>
+                                <li class="paihang"> <span class="every_re"> 5 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                                <li class="paihang"> <span class="every_re"> 6 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                                <li class="paihang"> <span class="every_re"> 7 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+
+        </div>
+
+
+        <!--新刊速递-->
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <p class="divder">新刊速递</p>
+                <div>
+                <hr />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-2">
+                <div>
+                    <img src='image/liannong.png'class="img-responsive">
+                    <p class="new_title">恋侬</p>
+                    <p class="date">2017年第2期</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <img src='image/guilin.png'class="img-responsive">
+                    <p class="new_title">桂林</p>
+                    <p class="date">2017年第3期</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <img src='image/qilu.png'class="img-responsive">
+                    <p class="new_title">齐鲁周刊</p>
+                    <p class="date">2017年第1期</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <img src='image/shijie.png'class="img-responsive">
+                    <p class="new_title">视界</p>
+                    <p class="date">2017年第5期</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                    <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-7">
+                <p>拇指先森</p>
+            </div>
+            <div class="col-md-1">
+               <a href="javascript:void(0)">联系我们</a>
+            </div>
+        </div>
+
+</div>
+
+
+</body>
+<script>
+    function changeheight()
+    {
+        var h=document.getElementById("mainnav").offsetHeight;
+        //alert(h);
+        var r= document.getElementById("recommand");
+        r.style.height=h+'px';
+        //alert(r.offsetHeight);
+    }
+</script>
+</html>
