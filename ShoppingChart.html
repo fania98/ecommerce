@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
+	<link href="css/myCart.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/myCartxh.js"></script>
     <style>
         body {
             font-style: 微软雅黑;
@@ -11,12 +13,16 @@
             padding:0;
             height:100%;
         }
-
+		.tou p{
+			font-family:"黑体";
+			color:white;
+			font-size:18px;
+		}
         .navele{
             display:block;
             float:left;
             color:#4e555b;
-            background-color:#f6f6f6;
+            background-color:#e9e9e9;
             padding-left:30px;
             padding-right:60px;
             margin-top: 1px;
@@ -26,14 +32,13 @@
             font-size: larger;
             font-family: 微软雅黑;
             width:100%;
-            min-width:160px;
         }
         .header{
             display:block;
             float:left;
             font-family: 微软雅黑;
             color:#981f22;
-            background-color:#f6f6f6;
+            background-color:#e9e9e9;
             padding-left:30px;
             padding-right:60px;
             height:50px;
@@ -42,7 +47,6 @@
             font-size: 20px;
             font-weight:bold;
             width:100%;
-            min-width:160px;
         }
         .navele:hover{
             background-color:#c9c9c9;
@@ -61,7 +65,7 @@
             top:20%;
         }
         .recommand{
-            background-color:#f6f6f6;
+            background-color:#e9e9e9;
             width:100%;
             height:360px;
         }
@@ -114,43 +118,31 @@
         }
         .new_title {
             font-family: 黑体;
-            margin-top:7px;
+            margin-top:5px;
             font-weight: bold;
-            font-size:17px;
+            font-size:15px;
         }
         .date {
             font-family:等线;
-            font-size:14px;
+            font-size:12px;
             color: #aaaaaa;
         }
-        .paihang{
-            display:block;
-            float:left;
-            color:#4e555b;
-            background-color: #f6f6f6;
-            padding-left:30px;
-            padding-right:60px;
-            margin-top: 1px;
-            height:45px;
-            width:220px;
-            text-align: -moz-center;
-            font-size: larger;
-            font-family: 微软雅黑;
-            width:100%;
-            min-width:160px;
-        }
-        .paihang:hover{
-            background-color:#c9c9c9;
-            color: #32383e;
-        }
-        .paihangtab{
-            margin-left:10px;
-        }
+		.shopping {
+			text-align:center;
+			}
+		.bottomline{
+			border-bottom: 1px solid #181b2a;
+		}
+		.end span{
+			color: white;
+			font-family:黑体;
+			font-size: 25px;
+		}
     </style>
 
 
     <meta charset="UTF-8">
-    <title>main page</title>
+    <title>购物车</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- 引入 Bootstrap -->
@@ -205,7 +197,7 @@
     </script>
 
 </head>
-<body onload="changeheight()">
+<body>
 <div>
     <!--模态框-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -303,7 +295,7 @@
 </div>
 
     <!--主页面-->
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <div class="col-md-offset-2 col-md-6">
                 <img class="img-responsive" src="image/logo.png">
@@ -312,19 +304,17 @@
                 <div class="row">
                     <ol class="breadcrumb" style="width:100%;background-color:white">
                         <li id="loginhref"><a href="#" data-toggle="modal" data-target="#myModal" onclick="openmodel()">登录</a></li>
-                       <!-- <li><a href="#">我的订单</a></li>
-                        <li><a href="#">收藏</a></li>-->
+
                         <li><a href="#">购物车</a></li>
                     </ol>
                 </div>
-                <!--搜索栏-->
                 <div class="row">
                         <!--<form role="form" class="form-horizontal" id="search" action="#">-->
                             <div class="col-md-8">
                                 <input type="text" class="form-control" id="searchinput" placeholder="输入搜索关键词">
                             </div>
                             <div class="col-md-2">
-                                <button style="margin-left:-10px" class="btn">搜索</button>
+                                <button style="margin-left:-10px" class="btn" onclick="window.open('SearchingResult.html')">搜索</button>
                             </div>
 
                     </div>
@@ -332,36 +322,14 @@
             <div class="col-md-2">
             </div>
         </div>
-        <!--搜索栏-->
-       <!--<div class="row" id="searchrow">
-            <div class="col-md-2">
-                <form role="form" class="form-horizontal" id="search" action="#">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" id="searchinput" placeholder="输入搜索关键词">
-                            </div>
-                            <div class="col-md-1">
-                                <button class="btn btn-default">搜索</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>-->
-       <!-- 水平线
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <h5 class="divider"></h5>
-            </div>
-        </div>-->
-        <!--导航栏-->
+
+
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">首页</a>
+                        <a class="navbar-brand" href="MainPage.html">首页</a>
                     </div>
                     <div>
                         <ul class="nav navbar-nav">
@@ -398,203 +366,180 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        </div>
-        <div class="hidden-xs"style="text-align:center;width:100%">
-            <img src="image/slider1.png" class="img-responsive">
-        </div>
-    <!--杂志导航-->
-
-            <div class="row mainrow">
-                <div class="col-md-offset-2 col-md-2 "id="mainnav">
-                    <ul class="mynav" >
-                        <li class="header"><p>杂志分类</p></li>
-                        <a href="#"><li class="navele"><p>时尚生活</p>
-                            <div class="fashion"></div>
-                        </li></a>
-                        <a href="#"><li class="navele"><p href="#">娱乐休闲</p></li></a>
-                        <li onclick="sendverti()" class="navele"><p>运动健康</p></li>
-                        <li class="navele"><p>教育科技</p></li>
-                        <li class="navele"><p>商业财经</p></li>
-                        <li class="navele"><p>新闻人物</p></li>
-                        <li class="navele"><p>文化艺术</p></li>
-                    </ul>
-
-
-                    <!--<ul id="nav">
-                        <li><a href="#">时尚生活</a>
-                                <ul>
-                                    <li><a href="#">111</a></li>
-                                    <li><a href="#">222</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">娱乐休闲 </a></li>
-                            <li><a href="#">运动健康</a></li>
-                            <li><a href="#">教育科技</a></li>
-                            <li><a href="#">商业财经</a></li>
-                            <li><a href="#">新闻人物</a></li>
-                            <li><a href="#">文化艺术</a></li>
-                    </ul>-->
-                </div>
-
-
-                <!--每日推荐-->
-                <div class="col-md-3 recommand hidden-xs hidden-sm" id="recommand">
-                    <div class="row">
-                        <div class="col-md-6 every_re">
-                            <p>每日推荐</p>
-                        </div>
-                        <div class="col-md-6 title_re">
-                            <p>  文化的穿梭</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="image/recommand.PNG" class="img-responsive">
-                        </div>
-                        <div class="col-md-6">
-                            <p class="introduction">本期主题崇礼区隶属于河北省张家口市。距今200万年前古人类就在此繁衍生息，5000年前，黄帝、炎帝、蚩尤“邑于逐鹿之阿”，开启了中华文明之先河。如今，崇礼是华北地区最大的天然滑雪场，被誉为东方达沃斯。</p
-                            <br>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p class="price">免费</p>
-                                </div>
-                                <div class="col-md-8">
-                                    <button id="btn1" class="btn btn-block btn-danger" onclick="sendverti()">内容预览</button>
-                                    <br>
-                                    <button class="btn btn-block btn-danger">立即购买</button>
-                                </div>
-                            <!--<div class="row">
-                                <div class="col-md-6">
-                                    <button class="btn btn-block btn-danger btn1">内容预览</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button class="btn btn-block btn-danger btn2">立即购买</button>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                    </div>
-                    <!--<div class="row btn1">
-                        <div class="col-md-offset-5 col-md-3">
-                            <p class="price">免费</p>
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-block btn-danger btn1">内容预览</button>
-                        </div>
-                    </div>
-                    <div class="row btn2">
-                        <div class="col-md-offset-8 col-md-4">
-                            <button class="btn btn-block btn-danger btn2">立即购买</button>
-                        </div>
-                    </div>-->
-                </div>
-                <!--排行榜-->
-                <div class="col-md-3 paihangtab">
-                    <ul class="nav nav-tabs every_re">
-                            <li class="active">
-                                <a href="#weekhit" data-toggle="tab">
-                                    周点击量排行
-                                </a>
-                            </li>
-                            <li ><a href="#totalorder" data-toggle="tab">阅读量排行</a></li>
-                        </ul>
-                    <div id="tabcontent2" class="tab-content">
-                        <div class="tab-pane fade in active" id="weekhit">
-                               <ul class="mynav">
-                                   <li class="paihang"><span class="every_re"> 1 </span><span class="new_title">恋侬 </span><span class="date">2017年第2期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 2 </span><span class="new_title">桂林 </span><span class="date">2017年第3期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 3 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第1期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 4 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 5 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 6 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                                   <li class="paihang"> <span class="every_re"> 7 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                               </ul>
-                        </div>
-                        <div class="tab-pane fade" id="totalorder">
-                            <ul class="mynav">
-                                <li class="paihang"><span class="every_re"> 1 </span><span class="new_title">视界 </span><span class="date">2017年第2期</span></li>
-                                <li class="paihang"> <span class="every_re"> 2 </span><span class="new_title">恋侬 </span><span class="date">2017年第3期</span></li>
-                                <li class="paihang"> <span class="every_re"> 3 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第1期</span></li>
-                                <li class="paihang"> <span class="every_re"> 4 </span><span class="new_title">齐鲁周刊 </span><span class="date">2017年第5期</span></li>
-                                <li class="paihang"> <span class="every_re"> 5 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                                <li class="paihang"> <span class="every_re"> 6 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                                <li class="paihang"> <span class="every_re"> 7 </span><span class="new_title">视界 </span><span class="date">2017年第5期</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div>
-
+			</div>
         </div>
 
 
-        <!--新刊速递-->
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <p class="divder">新刊速递</p>
-                <div>
-                <hr />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-2 col-md-2">
-                <div>
-                    <img src='image/liannong.png'class="img-responsive">
-                    <p class="new_title">恋侬</p>
-                    <p class="date">2017年第2期</p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div>
-                    <img src='image/guilin.png'class="img-responsive">
-                    <p class="new_title">桂林</p>
-                    <p class="date">2017年第3期</p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div>
-                    <img src='image/qilu.png'class="img-responsive">
-                    <p class="new_title">齐鲁周刊</p>
-                    <p class="date">2017年第1期</p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div>
-                    <img src='image/shijie.png'class="img-responsive">
-                    <p class="new_title">视界</p>
-                    <p class="date">2017年第5期</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                    <hr />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-2 col-md-7">
-                <p>拇指先森</p>
-            </div>
-            <div class="col-md-1">
-               <a href="javascript:void(0)">联系我们</a>
-            </div>
-        </div>
-
+	<div class="row tou" >
+		<div class= "col-md-1 col-md-offset-2" style="background-color:black;height:45px;">
+		</div>
+		<div class= "col-md-3" style="background-color:black;height:45px;">
+			<p style="text-align:center; line-height:45px;">商品信息</p>
+		</div>
+		<div class= "col-md-1" style="background-color:black;height:45px;">
+			<p style="text-align:center;line-height:45px;">单价（元）</p>
+		</div>
+		<div class= "col-md-1" style="background-color:black;height:45px;">
+			<p style="text-align:center; line-height:45px;">数量（本）</p>
+		</div>
+		<div class= "col-md-1" style="background-color:black;height:45px;">
+			<p style="text-align:center; line-height:45px;">小计（元）</p>
+		</div>
+		<div class= "col-md-1" style="background-color:black;height:45px;">
+			<p style="text-align:center; line-height:45px;">操作</p>
+		</div>
+	</div>
+	<div class="row" style="height: 20px">
+	</div>
+	<div class="row" id="product1" name="shopping">
+		<div class= "col-md-1 col-md-offset-2 bottomline" style="background-color:#f8f8f8;line-height:120px; height:120px;text-align:center;">
+			<input name="cartCheckBox"  id="testt" type="checkbox" value="product1" onclick="selectSingle()" />
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<img src="image/guilin.png" class="img-responsive" style="background-color:#f8f8f8;height:100px;margin-top:10px; display: inline-block;">
+		</div>
+		<div class= "col-md-2 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<div style="text-align:center; margin:40px auto;">
+			<a href="#">三月桂林</a></br>
+			出版商：某个出版商
+			</div>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;">6.8</p>
+		</div>
+		<div class= "col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px;">
+			<img src="image/taobao_minus.jpg" alt="minus" onclick="changeNum('num_1','minus')" class="hand"/> <input id="num_1" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="image/taobao_adding.jpg" alt="add" onclick="changeNum('num_1','add')"  class="hand"/>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;"></p>
+		</div>
+		<div class="col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px">
+			<a href="javascript:deleteRow('product1','product11');">删除</a>
+		</div>
+	</div>
+	<div class="row" id="product11" style="height: 10px">
+	</div>
+	<div class="row" id="product2" name="shopping">
+		<div class= "col-md-1 col-md-offset-2 bottomline" style="background-color:#f8f8f8;line-height:120px; height:120px;text-align:center;">
+			<input name="cartCheckBox" type="checkbox" value="product2" onclick="selectSingle()" />
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<img src="image/liannong.png" class="img-responsive" style="background-color:#f8f8f8;height:100px;margin-top:10px; display: inline-block;">
+		</div>
+		<div class= "col-md-2 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<div style="text-align:center; margin:40px auto;">
+			<a href="#">恋侬LENNON：周年庆</a></br>
+			出版商：某个出版商
+			</div>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;">10.2</p>
+		</div>
+		<div class= "col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px;">
+			<img src="image/taobao_minus.jpg" alt="minus" onclick="changeNum('num_2','minus')" class="hand"/> <input id="num_2" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="image/taobao_adding.jpg" alt="add" onclick="changeNum('num_2','add')"  class="hand"/>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;"></p>
+		</div>
+		<div class="col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px">
+			<a href="javascript:deleteRow('product2','product22');">删除</a>
+		</div>
+	</div>
+	<div class="row" id="product22" style="height: 10px">
+	</div>
+	<div class="row" id="product3" name="shopping">
+		<div class= "col-md-1 col-md-offset-2 bottomline" style="background-color:#f8f8f8;line-height:120px; height:120px;text-align:center;">
+			<input name="cartCheckBox" type="checkbox" value="product3" onclick="selectSingle()" />
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<img src="image/qilu.png" class="img-responsive" style="background-color:#f8f8f8;height:100px;margin-top:10px; display: inline-block;">
+		</div>
+		<div class= "col-md-2 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<div style="text-align:center; margin:40px auto;">
+			<a href="#">齐鲁周刊</a></br>
+			出版商：某个出版商
+			</div>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;">6.4</p>
+		</div>
+		<div class= "col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px;">
+			<img src="image/taobao_minus.jpg" alt="minus" onclick="changeNum('num_3','minus')" class="hand"/> <input id="num_3" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="image/taobao_adding.jpg" alt="add" onclick="changeNum('num_3','add')"  class="hand"/>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;"></p>
+		</div>
+		<div class="col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px">
+			<a href="javascript:deleteRow('product3','product33');">删除</a>
+		</div>
+	</div>
+	<div class="row" id="product33" style="height: 10px">
+	</div>
+	<div class="row" id="product4" name="shopping">
+		<div class= "col-md-1 col-md-offset-2 bottomline" style="background-color:#f8f8f8;line-height:120px; height:120px;text-align:center;">
+			<input name="cartCheckBox" type="checkbox" value="product4" onclick="selectSingle()" />
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<img src="image/shijie.png" class="img-responsive" style="background-color:#f8f8f8;height:100px;margin-top:10px; display: inline-block;">
+		</div>
+		<div class= "col-md-2 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<div style="text-align:center; margin:40px auto;">
+			<a href="#">视界</a></br>
+			出版商：某个出版商
+			</div>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;">15</p>
+		</div>
+		<div class= "col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px;">
+			<img src="image/taobao_minus.jpg" alt="minus" onclick="changeNum('num_4','minus')" class="hand"/> <input id="num_4" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="image/taobao_adding.jpg" alt="add" onclick="changeNum('num_4','add')"  class="hand"/>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;"></p>
+		</div>
+		<div class="col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px">
+			<a href="javascript:deleteRow('product4','product44');">删除</a>
+		</div>
+	</div>
+	<div class="row" id="product44" style="height: 10px">
+	</div>
+	<div class="row" id="product5" name="shopping">
+		<div class= "col-md-1 col-md-offset-2 bottomline" style="background-color:#f8f8f8;line-height:120px; height:120px;text-align:center;">
+			<input name="cartCheckBox" type="checkbox" value="product5" onclick="selectSingle()" />
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<img src="image/recommand.png" class="img-responsive" style="background-color:#f8f8f8;height:100px;margin-top:10px; display: inline-block;">
+		</div>
+		<div class= "col-md-2 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<div style="text-align:center; margin:40px auto;">
+			<a href="#">文化的穿梭</a></br>
+			出版商：某个出版商
+			</div>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;">7.8</p>
+		</div>
+		<div class= "col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px;">
+			<img src="image/taobao_minus.jpg" alt="minus" onclick="changeNum('num_5','minus')" class="hand"/> <input id="num_5" type="text"  value="1" class="num_input" readonly="readonly"/> <img src="image/taobao_adding.jpg" alt="add" onclick="changeNum('num_5','add')"  class="hand"/>
+		</div>
+		<div class= "col-md-1 bottomline"style="background-color:#f8f8f8;height:120px;">
+			<p style="text-align:center; line-height:120px;"></p>
+		</div>
+		<div class="col-md-1 bottomline" style="background-color:#f8f8f8;text-align:center;height:120px;line-height:120px">
+			<a href="javascript:deleteRow('product5','product55');">删除</a>
+		</div>
+	</div>
+	<div class="row" id="product55" style="height: 10px">
+	</div>
+	<div class="row end" id="jiesuan">
+		<div class="col-md-1 col-md-offset-2" style="height:38px; background-color:black">
+		</div>
+		<div class="col-md-2" style="height:38px; background-color:black">
+		<span><strong>总计 </strong></span><span id="total" style="text-align:right; line-height:30px;"><strong>  0</strong></span><span><strong>元</strong></span>
+		</div>
+		<div class="col-md-5" style="height:38px; background-color:black">
+		</div>
+	</div>
 </div>
-
-
 </body>
-<script>
-    function changeheight()
-    {
-        var h=document.getElementById("mainnav").offsetHeight;
-        //alert(h);
-        var r= document.getElementById("recommand");
-        r.style.height=h+'px';
-        //alert(r.offsetHeight);
-    }
-</script>
 </html>
